@@ -311,7 +311,7 @@ INCLUDE "gfx/version.asm"
 
 SECTION "bank1C", ROMX
 
-INCLUDE "engine/movie/splash.asm"
+;INCLUDE "engine/movie/splash.asm" ;gbcnote - moved to another bank to make space
 INCLUDE "engine/movie/hall_of_fame.asm"
 INCLUDE "engine/overworld/healing_machine.asm"
 INCLUDE "engine/overworld/player_animations.asm"
@@ -354,3 +354,12 @@ INCLUDE "data/battle_anims/frame_blocks.asm"
 INCLUDE "engine/movie/evolution.asm"
 INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "engine/items/tm_prices.asm"
+
+SECTION "bank2E", ROMX
+;gbcnote - This bank with hold the bg map attributes for the gameboy color among other stuff
+
+;include the bgmap files from pokemon yellow
+INCLUDE "data/bg_map_attributes.asm"
+INCLUDE "engine/bg_map_attributes.asm"
+
+INCLUDE "engine/movie/splash.asm"	;gbcnote - moved here to make space

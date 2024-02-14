@@ -67,6 +67,9 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ldh [rBGP], a
 	ldh [rOBP0], a
 	ldh [rOBP1], a
+	call UpdateGBCPal_BGP
+	call UpdateGBCPal_OBP0
+	call UpdateGBCPal_OBP1
 .slideSilhouettesLoop ; slide silhouettes of the player's pic and the enemy's pic onto the screen
 	ld h, b
 	ld l, $40
@@ -93,10 +96,10 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ldh [rWY], a
 	inc a
 	ldh [hAutoBGTransferEnabled], a
+	call HideSprites
 	call Delay3
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
-	call HideSprites
 	jpfar PrintBeginningBattleText
 
 ; when a battle is starting, silhouettes of the player's pic and the enemy's pic are slid onto the screen
