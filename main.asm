@@ -359,7 +359,7 @@ SECTION "bank2E", ROMX
 ;gbcnote - This bank with hold the bg map attributes for the gameboy color among other stuff
 
 ;include the bgmap files from pokemon yellow
-INCLUDE "data/bg_map_attributes.asm"
+INCLUDE "data/gbc/bg_map_attributes.asm"
 INCLUDE "engine/bg_map_attributes.asm"
 
 INCLUDE "engine/movie/splash.asm"	;gbcnote - moved here to make space
