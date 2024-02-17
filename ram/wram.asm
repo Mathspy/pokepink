@@ -503,6 +503,11 @@ wEnemyBideAccumulatedDamage:: dw
 
 	ds 8
 wMiscBattleDataEnd::
+
+NEXTU
+	ds 2
+wTrainerCardBadgeAttributes:: ds 6 * 9 + 1
+;gbcnote - modified to match yellow
 ENDU
 
 ; This union spans 39 bytes.
@@ -1009,7 +1014,8 @@ wScriptedNPCWalkCounter:: db
 
 	ds 1
 
-wGBC:: db
+;gbcnote - moved to hram
+; wGBC:: db
 
 ; if running on SGB, it's 1, else it's 0
 wOnSGB:: db
@@ -1054,6 +1060,11 @@ NEXTU
 ; the total amount of exp a mon gained
 wExpAmountGained:: dw
 wGainBoostedExp:: db
+
+NEXTU
+	ds 9
+;gbcnote - modified to match yellow
+wPartyHPBarAttributes:: ds PARTY_LENGTH
 ENDU
 
 wGymCityName:: ds 17
@@ -2040,7 +2051,14 @@ wRoute18Gate1FCurScript:: db
 	ds 78
 wGameProgressFlagsEnd::
 
-	ds 56
+wGBCBasePalPointers:: ds NUM_ACTIVE_PALS * 2 ; 8 bytes
+wGBCPal:: ds PAL_SIZE ; 8 bytes
+wLastBGP:: ds 1
+wLastOBP0:: ds 1
+wLastOBP1:: ds 1
+wBGPPalsBuffer:: ds NUM_ACTIVE_PALS * PAL_SIZE ;32 bytes
+
+	ds 5
 
 wObtainedHiddenItemsFlags:: flag_array 112
 

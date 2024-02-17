@@ -396,6 +396,10 @@ hJoyInput:: db
 
 hDisableJoypadPolling:: db
 
-	ds 5
+
+	ds 4
+
+;gbcnote - 0 if DMG, != 0 if GBC
+hGBC:: db
 
 ENDSECTION

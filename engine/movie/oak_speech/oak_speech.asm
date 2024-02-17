@@ -185,6 +185,7 @@ FadeInIntroPic:
 .next
 	ld a, [hli]
 	ldh [rBGP], a
+	call UpdateGBCPal_BGP
 	ld c, 10
 	call DelayFrames
 	dec b
@@ -206,6 +207,7 @@ MovePicLeft:
 
 	ld a, %11100100
 	ldh [rBGP], a
+	call UpdateGBCPal_BGP
 .next
 	call DelayFrame
 	ldh a, [rWX]

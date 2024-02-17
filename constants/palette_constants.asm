@@ -70,4 +70,8 @@ DEF SET_PAL_DEFAULT EQU $ff
 	const PAL_BADGE     ; $22
 	const PAL_CAVE      ; $23
 	const PAL_GAMEFREAK ; $24
+	;gbcnote - added from yellow
+	const PAL_25        ; $25
+	const PAL_26        ; $26
+	const PAL_27        ; $27
 DEF NUM_SGB_PALS EQU const_value
